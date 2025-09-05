@@ -10,11 +10,13 @@ public class AntStockChat : AntChat
     {
         get; set;
     }
+
     [StringLength(0x100), Required]
     public string? Message
     {
         get; set;
     }
+
     [NotMapped]
     public string? AccessToken
     {
@@ -24,5 +26,6 @@ public class AntStockChat : AntChat
         }
         get => accessToken;
     }
+
     string? accessToken;
 }
