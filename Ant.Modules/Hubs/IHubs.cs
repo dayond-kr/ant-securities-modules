@@ -43,4 +43,6 @@ public interface IHubs
     Task SendMessageAsync(string image, string name, string dt, string message, string code, string token);
 
     Task SendFuturesOrderAsync(OpenAPI.OrderFO orderFO);
+
+    Task AssistantChatMessageAsync(string message, long ticks);
 }
