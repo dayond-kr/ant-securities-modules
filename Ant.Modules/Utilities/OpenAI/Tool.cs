@@ -13,4 +13,9 @@ public static class Tool
     {
         return ChatTool.CreateFunctionTool(nameof(GetStockItems), functionParameters: new BinaryData(bytes), functionDescription: description);
     }
+
+    public static ChatTool WebSearch(byte[] bytes, string description)
+    {
+        return ChatTool.CreateFunctionTool(nameof(WebSearch), functionParameters: new BinaryData(bytes), functionDescription: description);
+    }
 }
