@@ -8,7 +8,11 @@ using System.Net;
 
 namespace ShareInvest.Utilities.Naver;
 
-public class Papago : RestClient
+public class Papago(string clientId, string clientSecret) : RestClient("https://openapi.naver.com", configureDefaultHeaders: headers =>
+{
+    headers.Add("X-Naver-Client-Id", clientId);
+    headers.Add("X-Naver-Client-Secret", clientSecret);
+})
 {
     public async Task<TranslateSyntax?> TranslateAsync(string detectLanguage, string sentence)
     {
@@ -26,6 +30,7 @@ public class Papago : RestClient
         }
         return null;
     }
+
     public async Task<string?> DetectLanguage(string sentence)
     {
         var request = new RestRequest("v1/papago/detectLangs", Method.Post);
@@ -40,13 +45,6 @@ public class Papago : RestClient
         }
         return null;
     }
-    public Papago(string clientId, string clientSecret) : base("https://openapi.naver.com", configureDefaultHeaders: headers =>
-    {
-        headers.Add("X-Naver-Client-Id", clientId);
-        headers.Add("X-Naver-Client-Secret", clientSecret);
-    })
-    {
-        cts = new CancellationTokenSource();
-    }
-    readonly CancellationTokenSource cts;
+
+    readonly CancellationTokenSource cts = new();
 }
