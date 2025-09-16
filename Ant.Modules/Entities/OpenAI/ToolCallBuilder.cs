@@ -15,11 +15,6 @@ public record ToolCallBuilder
         get; set;
     }
 
-    public bool Completed
-    {
-        get; set;
-    }
-
     public ArrayBufferWriter<byte> ArgBuffer
     {
         get;
