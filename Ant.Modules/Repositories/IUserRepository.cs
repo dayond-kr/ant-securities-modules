@@ -31,6 +31,8 @@ public interface IUserRepository
 
     CoordinateUser[] GetClientCoordinates(IEnumerable<string> imageUrl, string? userName = null, string? userId = null);
 
+    Memory[] GetRecallCandidates(string userId, int takeCount = 0x10);
+
     IEnumerable<string> GetPushKeys();
 
     IEnumerable<(string userId, string loginProvider)> ConfirmedExistingUsers(string deviceId);
