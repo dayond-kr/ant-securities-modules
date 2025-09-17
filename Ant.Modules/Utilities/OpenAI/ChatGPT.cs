@@ -50,7 +50,7 @@ public class ChatGPT : OpenAIClient
         var options = new ChatCompletionOptions
         {
             ToolChoice = Options.ToolChoice,
-            EndUserId = userId
+            EndUserId = userId,
         };
 
         foreach (var tool in Options.Tools)
