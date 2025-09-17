@@ -6,7 +6,7 @@ using ShareInvest.Entities.Kakao.Geo;
 
 using System.Net;
 
-namespace ShareInvest.Utilities;
+namespace ShareInvest.Utilities.Kakao;
 
 public class Kakao(string accessToken) : RestClient("https://dapi.kakao.com", configureDefaultHeaders: headers =>
 {

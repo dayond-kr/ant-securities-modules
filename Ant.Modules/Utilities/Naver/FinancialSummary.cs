@@ -7,7 +7,7 @@ using ShareInvest.Entities;
 
 using System.Net;
 
-namespace ShareInvest.Utilities;
+namespace ShareInvest.Utilities.Naver;
 
 public class FinancialSummary : RestClient
 {
