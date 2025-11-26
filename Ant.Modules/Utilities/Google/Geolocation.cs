@@ -24,7 +24,7 @@ public class Geolocation : RestClient
                 {
                     Code = (int)response.StatusCode,
                     Message = response.Content ?? string.Empty,
-                    Errors = new GeoErrors[] { new() { Message = response.ErrorMessage ?? string.Empty, Domain = response.Server ?? string.Empty, } }
+                    Errors = [new() { Message = response.ErrorMessage ?? string.Empty, Domain = response.Server ?? string.Empty, }]
                 }
             };
         }

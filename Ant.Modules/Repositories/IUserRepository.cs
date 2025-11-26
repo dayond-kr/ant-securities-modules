@@ -1,6 +1,7 @@
 ﻿using ShareInvest.Entities;
 using ShareInvest.Entities.Google;
 using ShareInvest.Entities.Kakao;
+using ShareInvest.Entities.OpenAI;
 
 namespace ShareInvest.Repositories;
 
@@ -26,7 +27,11 @@ public interface IUserRepository
 
     Securities[] GetSecuritiesById();
 
+    Chat[] GetChats(DateTime forcing, string userId, int takeCount = 4);
+
     CoordinateUser[] GetClientCoordinates(IEnumerable<string> imageUrl, string? userName = null, string? userId = null);
+
+    Memory[] GetRecallCandidates(string userId, int takeCount = 0x10);
 
     IEnumerable<string> GetPushKeys();
 
