@@ -9,7 +9,14 @@ namespace ShareInvest;
 
 public static class Service
 {
-    public static DateTime ConvertTime(long lookup)
+    public static DateTime ConvertTimeToUtc(long lookup)
+    {
+        return RuntimeInformation.IsOSPlatform(OSPlatform.Windows) ?
+
+            new DateTime(lookup) : TimeZoneInfo.ConvertTimeToUtc(new DateTime(lookup, DateTimeKind.Unspecified), SeoulTimeZone);
+    }
+
+    public static DateTime ConvertTimeFromUtc(long lookup)
     {
         return RuntimeInformation.IsOSPlatform(OSPlatform.Windows) ?
 
