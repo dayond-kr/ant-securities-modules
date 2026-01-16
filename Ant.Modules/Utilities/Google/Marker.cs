@@ -49,7 +49,7 @@ public static class Marker
             {
                 if (user.OpenMessage != null)
                 {
-                    return new DateTime(Cache.Epoch + user.OpenMessage.Lookup).ToString("g");
+                    return Service.ConvertTime(user.OpenMessage.Lookup).ToString("g", Service.CultureInfo);
                 }
                 return string.Empty;
             })(),

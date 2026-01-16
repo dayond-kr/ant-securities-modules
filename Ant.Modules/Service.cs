@@ -9,6 +9,13 @@ namespace ShareInvest;
 
 public static class Service
 {
+    public static DateTime ConvertTime(long lookup)
+    {
+        return RuntimeInformation.IsOSPlatform(OSPlatform.Windows) ?
+
+            new DateTime(Cache.Epoch + lookup) : TimeZoneInfo.ConvertTimeFromUtc(new DateTime(Cache.Epoch + lookup, DateTimeKind.Utc), SeoulTimeZone);
+    }
+
     public static DateTime Now
     {
         get => RuntimeInformation.IsOSPlatform(OSPlatform.Windows) ? DateTime.Now : TimeZoneInfo.ConvertTimeFromUtc(DateTime.UtcNow, SeoulTimeZone);
