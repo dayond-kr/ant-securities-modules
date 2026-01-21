@@ -41,6 +41,11 @@ public static class Cache
         }
     }
 
+    public static ConcurrentDictionary<string, string> Connections
+    {
+        get => connections;
+    }
+
     public static (bool tryPop, string? conclusion) GetCumulativeConclusionFromStack(string code)
     {
         if (stockCumulativeConclusion.TryGetValue(code, out ConcurrentStack<string>? stack))
@@ -480,6 +485,7 @@ public static class Cache
     static readonly ConcurrentQueue<object> queueWorker = new();
     static readonly ConcurrentDictionary<string, Entities.StockTheme> stockTheme = new();
     static readonly ConcurrentDictionary<string, TR> stores = new();
+    static readonly ConcurrentDictionary<string, string> connections = new();
     static readonly ConcurrentDictionary<string, string> stockIndex = new();
     static readonly ConcurrentDictionary<string, string> stockIndexRate = new();
     static readonly ConcurrentDictionary<string, string> stockQuotes = new();
