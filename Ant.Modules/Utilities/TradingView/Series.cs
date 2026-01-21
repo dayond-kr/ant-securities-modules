@@ -6,10 +6,12 @@ public struct Series
     {
         get; set;
     }
+
     public bool IsBullish
     {
         get; set;
     }
+
     public object ObjData
     {
         get; set;

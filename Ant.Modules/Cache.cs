@@ -1,5 +1,4 @@
 ﻿using ShareInvest.Entities.Analysis;
-using ShareInvest.OpenAPI.Entity;
 
 using Skender.Stock.Indicators;
 
@@ -483,6 +482,7 @@ public static class Cache
     static readonly ConcurrentQueue<(string code, string date, DateTime recordDate)> estimatedStock = new();
     static readonly ConcurrentQueue<(string code, string data)> futuresQueueWorker = new();
     static readonly ConcurrentQueue<object> queueWorker = new();
+
     static readonly ConcurrentDictionary<string, Entities.StockTheme> stockTheme = new();
     static readonly ConcurrentDictionary<string, TR> stores = new();
     static readonly ConcurrentDictionary<string, string> connections = new();

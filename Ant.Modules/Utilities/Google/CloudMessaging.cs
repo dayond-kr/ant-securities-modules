@@ -159,6 +159,5 @@ public class CloudMessaging(string baseUrl, GoogleCredential credential) : RestC
 
     readonly string route = $"v1/projects/{((ServiceAccountCredential)credential.UnderlyingCredential).ProjectId}/messages:send";
 
-    readonly GoogleCredential credential = credential;
     readonly CancellationTokenSource cts = new();
 }

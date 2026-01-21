@@ -1,4 +1,4 @@
-﻿namespace ShareInvest.Utilities.Callback;
+﻿namespace ShareInvest.Utilities.Kakao.Callback;
 
 public static class KakaoAuthenticationDefaults
 {

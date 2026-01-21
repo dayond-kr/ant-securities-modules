@@ -12,26 +12,31 @@ public class AntChat
     {
         get; set;
     }
+
     [NotMapped]
     public string? Image
     {
         get; set;
     }
+
     [NotMapped]
     public string? Name
     {
         get; set;
     }
+
     [StringLength(0x40)]
     public string? UserId
     {
         get; set;
     }
+
     [NotMapped]
     public bool IsMyself
     {
         get; set;
     }
+
     [Column(Order = 1), Key]
     public long Lookup
     {
@@ -41,10 +46,12 @@ public class AntChat
         }
         get => lookup;
     }
+
     [Required]
     public MessageType Type
     {
         get; set;
     }
+
     long lookup;
 }
